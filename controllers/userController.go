@@ -47,7 +47,7 @@ func SignUp(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, gin.H{})
+	c.JSON(http.StatusCreated, gin.H{})
 }
 
 func SignIn(c *gin.Context) {
@@ -100,7 +100,8 @@ func SignIn(c *gin.Context) {
 	}
 
 	c.SetSameSite(http.SameSiteLaxMode)
-	c.SetCookie("Authorization", tokenString, 3600, "", "", false, true)
+	c.SetCookie("Authorization", tokenString, 3600, "/", "localhost", false, true)
+
 	c.JSON(http.StatusOK, gin.H{})
 }
 

@@ -5,6 +5,7 @@ import (
 	"auth-api/initializers"
 	"auth-api/middleware"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,6 +17,10 @@ func init() {
 
 func main() {
 	r := gin.Default()
+	config := cors.DefaultConfig()
+	config.AllowAllOrigins = true
+	config.AllowCredentials = true
+	r.Use(cors.New(config))
 
 	r.POST("/signup", controllers.SignUp)
 	r.POST("/signin", controllers.SignIn)

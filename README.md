@@ -6,5 +6,11 @@ This is a basic, authentication api. Made as a side project to learn more about 
 
 Create a .env file at the root folder of the project, as pass the following values on it:
 
-- **DB**='<your-local-db-connection-here>'
-- **JWT_SECRET**='<the-pass-used-to-sign-jwt>'
+
+- **DATABASE_HOST**
+- **DATABASE_PORT**
+- **DATABASE_USER**
+- **DATABASE_PASSWORD**
+- **DATABASE_NAME**
+//
+- **JWT_SECRET** //the-pass-used-to-sign-jwt
